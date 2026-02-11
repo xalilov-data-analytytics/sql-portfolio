@@ -1,24 +1,24 @@
-# Nümunə Analiz: 18 yaşdan aşağı müştərilərin tələbə kartlarına daxil olan kənar köçürmələr
+# Case Study: External Inflows to Student Cards (Under Age 18)
 
-## Biznes problemi
-Banklar 18 yaşdan aşağı müştərilərə məxsus tələbə kartlarında aparılan əməliyyatları xüsusi nəzarətdə saxlamalıdır.
-Bəzi hallarda bu kartlara tez-tez üçüncü şəxslər tərəfindən pul köçürülməsi baş verir ki, bu da kartın başqası tərəfindən istifadə edilməsi və ya riskli davranış göstəricisi ola bilər.
+## Business Problem
+Banks must monitor transactions performed on student cards owned by customers under 18 years old.
+In some cases, these cards receive frequent incoming transfers from third parties, which may indicate that the card is being used by someone else or represents a potential risk behavior.
 
-Bu analizdə məqsəd həmin kartlara daxil olan kənar köçürmələri müəyyən etmək və davranışları təhlil etməkdir.
-
----
-
-## Analizin məqsədləri
-- 18 yaşdan aşağı və tələbə kartı olan müştərilərin seçilməsi
-- Kənar daxilolma əməliyyatlarının müəyyən edilməsi
-- Daxil olan məbləğlərin hesablanması
-- Müştərilərin davranışına görə təsnifləşdirilməsi
-- Risk və monitorinq üçün istifadə edilə biləcək nəticələrin hazırlanması
+The purpose of this analysis is to detect and analyze such external inflows.
 
 ---
 
-## Məlumat haqqında
-Dataset anonimləşdirilmiş bank əməliyyatlarından ibarətdir və aşağıdakı məlumatları ehtiva edir:
+## Objectives
+- Identify customers under 18 who own student cards
+- Detect incoming transactions from external accounts
+- Calculate total inflow amounts
+- Classify customer behavior based on inflow activity
+- Provide data for monitoring and risk control
+
+---
+
+## Data Description
+The dataset contains anonymized banking transaction data including:
 
 - customer_id
 - card_type
@@ -26,31 +26,31 @@ Dataset anonimləşdirilmiş bank əməliyyatlarından ibarətdir və aşağıda
 - amount
 - transaction_date
 
-Bütün identifikatorlar məxfiliyin qorunması məqsədilə maskalanmışdır.
+All identifiers are masked to preserve confidentiality.
 
 ---
 
-## Analiz addımları
-1. 18 yaşdan aşağı tələbə kartı olan müştərilərin seçilməsi
-2. Xaricdən daxil olan köçürmələrin filtrdən keçirilməsi
-3. Əməliyyat məbləğlərinin aqreqasiyası
-4. Daxilolma davranışlarının təhlili
-5. Monitorinq və risk nəzarəti üçün məlumatın hazırlanması
+## Analysis Steps
+1. Select customers under 18 with student cards
+2. Filter incoming transactions from external accounts
+3. Aggregate transaction amounts
+4. Analyze inflow behavior patterns
+5. Prepare data for monitoring and risk detection
 
 ---
 
-## İstifadə olunan SQL bacarıqları
-- CASE WHEN məntiqi
-- JOIN əməliyyatları
-- CTE (WITH)
-- SUM və COUNT aqreqasiya funksiyaları
-- Filter və biznes qaydalarının qurulması
+## SQL Skills Used
+- CASE WHEN logic
+- JOIN operations
+- CTE (WITH clause)
+- Aggregations (SUM, COUNT)
+- Filtering and business rule implementation
 
 ---
 
-## Biznes dəyəri
-Bu analiz bank üçün:
-- kartın başqası tərəfindən istifadə olunmasını aşkar etməyə
-- azyaşlı müştərilərin maliyyə davranışını izləməyə
-- risk və compliance komandalarına dəstək verməyə
-- şübhəli əməliyyatların erkən aşkarlanmasına kömək edir
+## Business Value
+This analysis helps the bank to:
+- detect possible third-party card usage
+- monitor financial activity of minors
+- support fraud and compliance teams
+- identify suspicious transaction patterns early
